@@ -1,4 +1,5 @@
 import React from "react";
+import { loginUrl } from "../spotify";
 
 const Login = () => {
   return (
@@ -18,7 +19,10 @@ const Login = () => {
           <h1 className="text-white font-Helvetica md:mt-48 mt-80 font-bold text-5xl text-center">
             Log in to Spotify
           </h1>
-          <a className="text-black font-Helvetica md:mt-20 mt-24 px-32 py-3 font-bold rounded-3xl bg-[#1DB954]">
+          <a
+            href={loginUrl}
+            className="text-black font-Helvetica md:mt-20 mt-24 px-32 py-3 font-bold rounded-3xl bg-[#1DB954]"
+          >
             Log In
           </a>
         </div>
