@@ -6,7 +6,7 @@ const BodyHeader = () => {
   const { user } = useDataLayer();
 
   return (
-    <div className="relative flex justify-end items-center gap-4 p-5">
+    <div className="flex justify-end items-center gap-4 p-5">
       <div className="ring-inset-0 ring peer ring-black rounded-full">
         <RxAvatar size="30" color="gray" />
       </div>

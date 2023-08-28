@@ -19,7 +19,7 @@ const PlayerBox = () => {
           <BsHddStack size="23" />
           <RxSpeakerLoud size="23" />
           <input
-            className="accent-[#1DB954] h-1 lg:w-[8rem] rounded-md md:w-[4rem]"
+            className="accent-[#1DB954] h-1 lg:w-[8rem] rounded-md md:w-[4rem] w-[2rem]"
             type="range"
             value="10"
           />
