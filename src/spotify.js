@@ -2,7 +2,7 @@ export const authEndpoint = "https://accounts.spotify.com/authorize";
 
 const redirectUri = "http://localhost:5173/";
 
-const clientId = "db78d0f9f8544f8e8ea14762e674d49b";
+const clientId = import.meta.env.VITE_clientId;
 
 const scopes = [
   "user-read-currently-playing",
