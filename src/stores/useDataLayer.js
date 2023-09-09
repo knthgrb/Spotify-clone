@@ -3,10 +3,10 @@ import { create } from "zustand";
 export const useDataLayer = create((set) => ({
   user: null,
   token: null,
-  //   "BQAc7931RcQS2aJ44IomJhm0vxUCb3CyWLfXF4n8WoU_s3g-nWxMw5DoEr9FPIT5hgYVyeFLV9GqfsBBt1hHS1d6iwQKcZcd75lQZyOJ9oBCmrMoFT_ZOyTBmXWEbsb4WKYq1F5lgT2lNUut_2cGd-2rTuL-L6R5Jm-wsGfKklBfkADBw-u9KaueStrRqS_wZ_euAr_BGoH",
   playlist: [],
   selectedPlaylistId: null,
   playlistTracks: [],
+  selectedTrack: null,
 
   SET_USER: (user) => set({ user: user }),
 
@@ -24,4 +24,6 @@ export const useDataLayer = create((set) => ({
     set({
       playlistTracks: [playlistTracks],
     }),
+
+  SET_SELECTED_TRACK: (track) => set({ selectedTrack: track }),
 }));

@@ -24,7 +24,7 @@ const PlaylistTracks = ({}) => {
   const isLongTitle = selectedPlaylistId?.data?.name.length > 20;
 
   return (
-    <div className="basis-full bg-[#040404] pt-2 pr-2">
+    <div className="w-full bg-[#040404] pt-2 pr-2">
       <StyledScrollableDiv className="relative bg-[#141414] text-white h-[calc(100%-5.9rem)] rounded-lg overflow-y-auto">
         <div className="absolute overflow-x-hidden inset-0">
           <div

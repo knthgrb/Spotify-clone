@@ -4,6 +4,7 @@ import { AiFillHome, AiOutlinePlus } from "react-icons/ai";
 import { FiSearch } from "react-icons/fi";
 import { VscLibrary } from "react-icons/vsc";
 import Playlist from "./Playlist";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -19,7 +20,9 @@ const Sidebar = () => {
   return (
     <div className="relative min-w-[300px] lg:min-w-[360px] pl-2 pr-2 pt-2 h-screen bg-[#040404]">
       <div className="bg-[#141414] h-30 rounded-lg p-5 space-y-5">
-        <SidebarOption Option="Home" Icon={AiFillHome} />
+        <Link to="/">
+          <SidebarOption Option="Home" Icon={AiFillHome} />
+        </Link>
         <SidebarOption Option="Search" Icon={FiSearch} />
       </div>
       <div className="bg-[#141414] relative h-[calc(100%-14rem)] mt-2 rounded-lg space-y-5">

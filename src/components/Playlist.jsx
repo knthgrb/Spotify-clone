@@ -1,11 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FiSearch } from "react-icons/fi";
 import { useDataLayer } from "../stores/useDataLayer";
 import PlaylistItem from "./PlaylistItem";
 
 const Playlist = () => {
-  const [onSearch, setOnSearch] = useState(false);
   const { playlist } = useDataLayer();
+  const [onSearch, setOnSearch] = useState(false);
+  const [filteredPlaylist, setFilteredPlaylist] = useState([]);
+
+  //initialize the filteredPlaylist with the full playlist
+  useEffect(() => {
+    setFilteredPlaylist(playlist[0]?.items || []);
+  }, [playlist]);
+
+  const handleSearchInputChange = (event) => {
+    const query = event.target.value;
+
+    // filter the playlist based on the search
+    const filteredItems = playlist[0]?.items.filter((item) =>
+      item.name.toLowerCase().startsWith(query.toLowerCase())
+    );
+
+    setFilteredPlaylist(filteredItems);
+  };
 
   return (
     <div>
@@ -25,10 +42,11 @@ const Playlist = () => {
         {onSearch && (
           <input
             autoFocus
-            onBlur={(prevState) => {
-              setOnSearch(!prevState);
+            onChange={handleSearchInputChange}
+            onBlur={() => {
+              setOnSearch(false);
             }}
-            className="p-1 focus:outline-none rounded-r-md bg-[#3d3838] text-white"
+            className="p-1 placeholder-white placeholder:text-[14px] focus:outline-none rounded-r-md bg-[#3d3838] text-white"
             type="text"
             placeholder="Search in your Library"
           />
@@ -36,8 +54,9 @@ const Playlist = () => {
       </div>
       <div className="overflow-y-auto mt-2 ml-3">
         <ul className="absolute">
-          {playlist[0]?.items?.map((items) => (
+          {filteredPlaylist.map((items) => (
             <PlaylistItem
+              setFilteredPlaylist={setFilteredPlaylist}
               title={items.name}
               key={items.id}
               playlistId={items.id}
