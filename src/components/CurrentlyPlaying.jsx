@@ -13,7 +13,9 @@ const CurrentlyPlaying = () => {
       <div className="flex items-center gap-3">
         <img
           className="h-14 w-14 rounded-md"
-          src="https://i.scdn.co/image/ab67616d0000b273963d364a78358c0125eb99cf"
+          src={
+            "https://i.scdn.co/image/ab67616d0000b273963d364a78358c0125eb99cf"
+          }
         />
         <div className="">
           <h4 className="font-medium w-44">

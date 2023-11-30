@@ -29,7 +29,7 @@ const Body = () => {
       >
         <BodyHeader />
         <h1 className="text-[30px] mb-5 ml-7 font-bold">{greeting}!</h1>
-        <ul className="flex flex-wrap gap-y-12 gap-x-1 justify-evenly">
+        <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5 p-5">
           {playlist[0]?.items?.map((items) => (
             <PlaylistCard
               title={items.name}

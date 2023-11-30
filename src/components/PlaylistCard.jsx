@@ -28,7 +28,7 @@ const PlaylistCard = ({ image, title, owner, playlistId }) => {
           onClick={() => {
             handlePlaylistClick(token, playlistId);
           }}
-          className="w-48 aspect-[3/4] bg-[#1f1e1e] text-left rounded-lg flex flex-col p-4 hover:bg-[#373535] transition-all duration-300 ease-in-out transform hover:scale-105"
+          className="w-48 aspect-[3/4] bg-[#1f1e1e] text-left rounded-lg p-4 hover:bg-[#373535] transition-all duration-300 ease-in-out transform hover:scale-105"
         >
           <img className="h-40 aspect-square rounded-md" src={image} />
           <div className="mt-4">
